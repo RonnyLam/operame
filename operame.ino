@@ -114,7 +114,7 @@ void display_3(const String& co2, const String& temp, const String& hum, int fg 
     sprite.setTextFont(8);
     sprite.setTextDatum(MC_DATUM);
     sprite.setTextColor(fg, bg);
-    sprite.drawString(co2, display.width()/2, display.height()/2 - 25);
+    sprite.drawString(co2, display.width()/2, display.height()/2 - 15);
     sprite.setTextFont(4);
     sprite.setTextDatum(ML_DATUM);
     sprite.drawString(temp, 10, display.height() - 15);
@@ -464,9 +464,9 @@ void setup() {
     ota_enabled   = WiFiSettings.checkbox("operame_ota", false, T.config_ota) && wifi_enabled;
 
     WiFiSettings.heading("CO2-niveaus");
-    co2_warning   = WiFiSettings.integer("operame_co2_warning", 400, 5000, 700, T.config_co2_warning);
-    co2_critical  = WiFiSettings.integer("operame_co2_critical",400, 5000, 800, T.config_co2_critical);
-    co2_blink     = WiFiSettings.integer("operame_co2_blink",   800, 5000, 800, T.config_co2_blink);
+    co2_warning   = WiFiSettings.integer("operame_co2_warning", 400, 5000, 800, T.config_co2_warning);
+    co2_critical  = WiFiSettings.integer("operame_co2_critical",400, 5000, 1200, T.config_co2_critical);
+    co2_blink     = WiFiSettings.integer("operame_co2_blink",   800, 5000, 1200, T.config_co2_blink);
 
     WiFiSettings.heading("MQTT");
     mqtt_enabled  = WiFiSettings.checkbox("operame_mqtt", false, T.config_mqtt) && wifi_enabled;
